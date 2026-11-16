@@ -1,0 +1,10 @@
+<div class="card" *ngIf="speciesInfo">
+  <h3>Especie e Historia (Endpoint /pokemon-species)</h3>
+  <p class="description">"{{ SpanishDescription }}"</p>
+  <div class="details-grid">
+    <p><strong>Hábitat:</strong> {{ speciesInfo.habitat ? speciesInfo.habitat.name : 'Desconocido' }}</p>
+    <p><strong>Ratio de Captura:</strong> {{ speciesInfo.capture_rate }}</p>
+    <p><strong>¿Es Legendario?:</strong> {{ speciesInfo.is_legendary ? 'Sí' : 'No' }}</p>
+    <p><strong>¿Es Mítico?:</strong> {{ speciesInfo.is_mythical ? 'Sí' : 'No' }}</p>
+  </div>
+</div>

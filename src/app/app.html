@@ -1,0 +1,14 @@
+<main class="container">
+  <h1>PokéExplorer - Práctica 02 (Angular + PokéAPI)</h1>
+  
+  <app-pokemon-search (search)="handleSearch($event)"></app-pokemon-search>
+
+  <div *ngIf="loading" class="state-msg">Cargando información de los 3 endpoints...</div>
+  <div *ngIf="errorMessage" class="error-msg">{{ errorMessage }}</div>
+
+  <div class="grid-container" *ngIf="pokemon">
+    <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+    <app-type-relations [typeInfo]="typeInfo"></app-type-relations>
+    <app-pokemon-details [speciesInfo]="speciesInfo"></app-pokemon-details>
+  </div>
+</main>

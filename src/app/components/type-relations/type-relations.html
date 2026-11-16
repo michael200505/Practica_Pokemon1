@@ -1,0 +1,20 @@
+<div class="card" *ngIf="typeInfo">
+  <h3>Efectividad de Tipo (Endpoint /type)</h3>
+  <p><strong>Tipo Evaluado:</strong> {{ typeInfo.name | uppercase }}</p>
+  
+  <div>
+    <h4>Doble daño a (Fortaleza):</h4>
+    <span *ngFor="let t of typeInfo.damage_relations.double_damage_to" class="badge green">
+      {{ t.name }}
+    </span>
+    <p *ngIf="typeInfo.damage_relations.double_damage_to.length === 0">Ninguno</p>
+  </div>
+
+  <div>
+    <h4>Recibe doble daño de (Debilidad):</h4>
+    <span *ngFor="let t of typeInfo.damage_relations.double_damage_from" class="badge red">
+      {{ t.name }}
+    </span>
+    <p *ngIf="typeInfo.damage_relations.double_damage_from.length === 0">Ninguno</p>
+  </div>
+</div>

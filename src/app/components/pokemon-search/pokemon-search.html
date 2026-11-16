@@ -1,0 +1,9 @@
+<div class="search-container">
+  <input 
+    type="text" 
+    [(ngModel)]="query" 
+    (keyup.enter)="onSearch()" 
+    placeholder="Ingresa nombre o ID de un Pokémon (ej. pikachu, charizard, 150)..." 
+  />
+  <button (click)="onSearch()">Buscar</button>
+</div>
